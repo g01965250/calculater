@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Calculater from'./components/Calculater';
+import { useState } from 'react';
 
 function App() {
+
+
+  const[active,setActive] = useState('');
+
+  const handleTrun = (e) =>{
+    console.log(e)
+    setActive (!active)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div className="wrapper">
+           {active && <Calculater/>}
+          <div className="button" onClick={handleTrun}>計算機</div>
+          </div>
+
     </div>
   );
 }
