@@ -5,20 +5,11 @@ import { useState } from 'react';
 function App() {
 
 
-  const[active,setActive] = useState('');
-
-  const handleTrun = (e) =>{
-    console.log(e)
-    setActive (!active)
-  }
-
   return (
     <div className="App">
         <div className="wrapper">
-           {active && <Calculater/>}
-          <div className="button" onClick={handleTrun}>計算機</div>
-          </div>
-
+          <Calculater/>
+        </div>
     </div>
   );
 }
